@@ -1,3 +1,62 @@
-.row-even{
-    background-color : rgb(220, 198, 255) ;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+section {
+  width: 95%;
+  margin: 2rem auto;
+  padding: 0.4rem;
+}
+section input,
+button {
+  padding: 0.4rem;
+  margin: 0.5rem 0rem;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 0.4rem;
+}
+.input-form{
+    max-width: fit-content;
+    margin: 1rem 0rem;
+    border-radius: 0.4rem;
+    margin: auto;
+}
+section label {
+  display: block;
+}
+
+button {
+  background-color: plum;
+  font-weight: bold;
+  display: block;
+}
+
+table {
+  margin: 1rem 0rem;
+  border-radius: 0.4rem;
+  border: 2px sold purple;
+  margin: auto;
+}
+
+table caption,
+th,
+td {
+  padding: 0.5rem 2rem;
+}
+.row-even {
+  background-color: rgb(220, 198, 255);
 }

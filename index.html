@@ -12,25 +12,30 @@
 <body>
     <main>
         <h1>Currency Teller</h1>
-        <p> I can Calculate change to the customer with a minimum number of notes</p>
-        <label for="input-amount">
-            Enter Amount :
-        </label>
-        <input type="number" name="input-amount" id="input-amount">
+        <p> I can Calculate change to the customer with a minimum number of notes.</p>
+        <section>
+            <div class="input-form">
 
-        <button onclick="calculateClickHandler()">Calculate</button>
-        <table class="output-table" border="1" style="width:5rem">
-            <caption>Required Number of notes</caption>
-            <thead>
-                <tr>
-                    <th>Notes</th>
-                    <th>Counts</th>
-                </tr>
-            </thead>
-            <tbody id="currency-change-tab-body">
-                <!-- // here the items will be appended -->
-            </tbody>
-        </table>
+                <label for="input-amount">
+                    Enter Amount :
+                </label>
+                <input onchange="calculateClickHandler()" type="number" name="input-amount" id="input-amount">
+
+                <button onclick="calculateClickHandler()">Calculate</button>
+            </div>
+            <table class="output-table" style="width:5rem">
+                <caption>Required number of notes</caption>
+                <thead>
+                    <tr>
+                        <th>Notes</th>
+                        <th>Counts</th>
+                    </tr>
+                </thead>
+                <tbody id="currency-change-tab-body">
+                    <!-- // here the items will be appended -->
+                </tbody>
+            </table>
+        </section>
     </main>
     <script src="app.js"></script>
 </body>
