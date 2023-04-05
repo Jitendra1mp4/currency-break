@@ -1,8 +1,9 @@
-import readlineSync from 'readline-sync';
-const availableNotes = [2000, 500, 100, 50, 20, 10, 5, 1];
+import readlineSync from "readline-sync";
+const availableNotes = [2000, 500,200, 100, 50, 20, 10, 5, 1];
 const requiredNotes = {
   2000: "",
   500: "",
+  200: "",
   100: "",
   50: "",
   20: "",
@@ -11,9 +12,9 @@ const requiredNotes = {
   1: "",
 };
 
-
 function calcRequiredNotes(inputCurrency) {
-  let remainingAmount = inputCurrency, i = 0;
+  let remainingAmount = inputCurrency,
+    i = 0;
   while (remainingAmount > 0) {
     // Get number of note for remaining amount
     const numberOfNote = parseInt(remainingAmount / availableNotes[i]);
@@ -32,7 +33,7 @@ function calcRequiredNotes(inputCurrency) {
 }
 
 let inputCurrency = 9323;
-inputCurrency = 
+inputCurrency = readlineSync.question("Enter the amount : ");
 console.log("inputCurrency : " + inputCurrency);
 //call function to calculate required change of note
 calcRequiredNotes(inputCurrency);
