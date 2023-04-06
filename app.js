@@ -1,5 +1,8 @@
 const availableNotes = [2000, 500, 200, 100, 50, 20, 10, 5, 1];
 const table = document.querySelector(".output-table");
+const paraErrorMsg = document.querySelector(".para-error-msg");
+
+
 function calcRequiredNotes(amount, reqNots) {
   let remainingAmount = amount,
     i = 0;
@@ -57,9 +60,17 @@ function calculateClickHandler() {
     5: "",
     1: "",
   };
-  console.log("inputCurrency : " + inputCurrency);
-  let reqNots = calcRequiredNotes(inputCurrency, requiredNotes);
-  console.log(reqNots);
-  addToDocument(reqNots);
-  table.style.display = "block" ;
+  if(inputCurrency>=1){
+    let reqNots = calcRequiredNotes(inputCurrency, requiredNotes);
+    addToDocument(reqNots);
+    table.style.display = "block" ;
+    paraErrorMsg.style.display = "none" ;
+    
+  }else{
+    table.style.display = "none" ;
+    paraErrorMsg.innerText = "Amount should be greater then 0."
+    paraErrorMsg.style.display = "block" ;
+  }
+  // console.log("inputCurrency : " + inputCurrency);
+  // console.log(reqNots);
 }

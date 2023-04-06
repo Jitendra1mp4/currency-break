@@ -46,6 +46,13 @@ button {
   display: block;
 }
 
+.para-error-msg{
+  background-color: rgba(255, 0, 0, 0.178);
+  color: red ;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  display: none;
+}
 table {
   display :none ;
   margin: 1rem 0rem;
