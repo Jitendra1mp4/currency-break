@@ -1,5 +1,5 @@
-// import readlineSync from 'readline-sync';
 const availableNotes = [2000, 500, 200, 100, 50, 20, 10, 5, 1];
+const table = document.querySelector(".output-table");
 function calcRequiredNotes(amount, reqNots) {
   let remainingAmount = amount,
     i = 0;
@@ -49,6 +49,7 @@ function calculateClickHandler() {
   const requiredNotes = {
     2000: "",
     500: "",
+    200 : "",
     100: "",
     50: "",
     20: "",
@@ -60,4 +61,5 @@ function calculateClickHandler() {
   let reqNots = calcRequiredNotes(inputCurrency, requiredNotes);
   console.log(reqNots);
   addToDocument(reqNots);
+  table.style.display = "block" ;
 }

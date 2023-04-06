@@ -47,6 +47,7 @@ button {
 }
 
 table {
+  display :none ;
   margin: 1rem 0rem;
   border-radius: 0.4rem;
   border: 2px sold purple;
