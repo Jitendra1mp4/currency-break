@@ -32,9 +32,8 @@ button {
 }
 .input-form{
     max-width: fit-content;
-    margin: 1rem 0rem;
+    margin: 1rem auto;
     border-radius: 0.4rem;
-    margin: auto;
 }
 section label {
   display: block;
@@ -47,18 +46,16 @@ button {
 }
 
 .para-error-msg{
-  background-color: rgba(255, 0, 0, 0.178);
-  color: red ;
   padding: 0.5rem;
   border-radius: 0.4rem;
   display: none;
 }
 table {
   display :none ;
-  margin: 1rem 0rem;
+  max-width: fit-content;
+  margin: 1rem 0px;
   border-radius: 0.4rem;
   border: 2px sold purple;
-  margin: auto;
 }
 
 table caption,

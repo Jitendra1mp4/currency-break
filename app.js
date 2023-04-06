@@ -2,8 +2,18 @@ const availableNotes = [2000, 500, 200, 100, 50, 20, 10, 5, 1];
 const table = document.querySelector(".output-table");
 const paraErrorMsg = document.querySelector(".para-error-msg");
 
-
-function calcRequiredNotes(amount, reqNots) {
+function calcRequiredNotes(amount) {
+  const requiredNotes = {
+    2000: "",
+    500: "",
+    200: "",
+    100: "",
+    50: "",
+    20: "",
+    10: "",
+    5: "",
+    1: "",
+  };
   let remainingAmount = amount,
     i = 0;
   while (remainingAmount > 0) {
@@ -13,14 +23,14 @@ function calcRequiredNotes(amount, reqNots) {
     //  console.log(`number Of ${availableNotes[i]} Note : ${numberOfNote}`);
 
     // add number of required notes to object
-    reqNots[availableNotes[i]] = numberOfNote;
+    requiredNotes[availableNotes[i]] = numberOfNote;
 
     // recalculate the remaining amount
     remainingAmount = remainingAmount % availableNotes[i];
     //increase the counter
     i++;
   }
-  return reqNots;
+  return requiredNotes;
 }
 
 function addToDocument(reqNots) {
@@ -40,37 +50,36 @@ function addToDocument(reqNots) {
     row.appendChild(currencyValueCell);
     row.appendChild(currencyQuantityCell);
     tbody.appendChild(row);
-    i++ ;
+    i++;
   }
 }
 
-// inputCurrency = readlineSync.question("Enter amount") ;
+// cashReceived = readlineSync.question("Enter amount") ;
 //call function to calculate required change of note
 
 function calculateClickHandler() {
-  const inputCurrency = document.getElementById("input-amount").value;
-  const requiredNotes = {
-    2000: "",
-    500: "",
-    200 : "",
-    100: "",
-    50: "",
-    20: "",
-    10: "",
-    5: "",
-    1: "",
-  };
-  if(inputCurrency>=1){
-    let reqNots = calcRequiredNotes(inputCurrency, requiredNotes);
+  const cashReceived = document.getElementById("cash-received").value;
+  const billAmount = document.getElementById("bill-amount").value;
+  const returnableAmount = cashReceived - billAmount;
+  manageDisplay(returnableAmount);
+
+}
+
+function manageDisplay(returnableAmount) {
+  if (returnableAmount >= 1) {
+    const reqNots = calcRequiredNotes(returnableAmount);
     addToDocument(reqNots);
-    table.style.display = "block" ;
-    paraErrorMsg.style.display = "none" ;
-    
-  }else{
-    table.style.display = "none" ;
-    paraErrorMsg.innerText = "Amount should be greater then 0."
-    paraErrorMsg.style.display = "block" ;
+    table.style.display = "block";
+    paraErrorMsg.style.display = "block";
+    paraErrorMsg.style.color = "green";
+    paraErrorMsg.style.backgroundColor = "#eeffee";
+    paraErrorMsg.innerText = "Returnable amount : " + returnableAmount;
+  } else {
+    table.style.display = "none";
+    paraErrorMsg.style.backgroundColor = "rgba(255, 0, 0, 0.178)";
+    paraErrorMsg.style.color = "red";
+    paraErrorMsg.innerText =
+      "Received cash should be greater then Bill amount.";
+    paraErrorMsg.style.display = "block";
   }
-  // console.log("inputCurrency : " + inputCurrency);
-  // console.log(reqNots);
 }

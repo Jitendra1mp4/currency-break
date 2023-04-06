@@ -15,28 +15,32 @@
         <p> I can calculate amount change for the customer with a minimum number of notes.</p>
         <section>
             <div class="input-form">
-
-                <label for="input-amount">
-                    Enter Amount :
+                <label for="bill-amount">
+                    Bill Amount :
                 </label>
-                <input onchange="calculateClickHandler()" type="number" name="input-amount" id="input-amount">
+                <input type="number" name="cash-received" id="bill-amount">
+
+                <label for="cash-received">
+                    Cash Received :
+                </label>
+                <input onchange="calculateClickHandler()" type="number" name="cash-received" id="cash-received">
 
                 <button onclick="calculateClickHandler()">Calculate</button>
 
                 <p class="para-error-msg"></p>
+                <table class="output-table" style="width:5rem">
+                    <caption>Required number of notes</caption>
+                    <thead>
+                        <tr>
+                            <th>Notes</th>
+                            <th>Counts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="currency-change-tab-body">
+                        <!-- // here the items will be appended -->
+                    </tbody>
+                </table>
             </div>
-            <table class="output-table" style="width:5rem">
-                <caption>Required number of notes</caption>
-                <thead>
-                    <tr>
-                        <th>Notes</th>
-                        <th>Counts</th>
-                    </tr>
-                </thead>
-                <tbody id="currency-change-tab-body">
-                    <!-- // here the items will be appended -->
-                </tbody>
-            </table>
         </section>
     </main>
     <script src="app.js"></script>
