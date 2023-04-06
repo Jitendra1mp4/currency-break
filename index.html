@@ -20,12 +20,13 @@
                 </label>
                 <input type="number" name="cash-received" id="bill-amount">
 
-                <label for="cash-received">
-                    Cash Received :
-                </label>
-                <input onchange="calculateClickHandler()" type="number" name="cash-received" id="cash-received">
-
-                <button onclick="calculateClickHandler()">Calculate</button>
+                <div class="cash-input-container">
+                    <label for="cash-received">
+                        Cash Received :
+                    </label>
+                    <input type="number" name="cash-received" id="cash-received">
+                    <button id="btn-calculate">Calculate</button>
+                </div>
 
                 <p class="para-error-msg"></p>
                 <table class="output-table" style="width:5rem">
