@@ -1,8 +1,10 @@
 const availableNotes = [2000, 500, 200, 100, 50, 20, 10, 5, 1];
-const inputBillAmount = document.getElementById("bill-amount") ; 
-const inputCashReceived = document.getElementById("cash-received") ;
+const inputBillAmount = document.getElementById("bill-amount");
+
+const inputCashReceived = document.getElementById("cash-received");
 const btnCalculate = document.getElementById("btn-calculate");
 const table = document.querySelector(".output-table");
+const cashInputContainer = document.querySelector(".cash-input-container");
 const paraErrorMsg = document.querySelector(".para-error-msg");
 
 function calcRequiredNotes(amount) {
@@ -83,8 +85,14 @@ function calculateHandler() {
   const cashReceived = inputCashReceived.value;
   const returnableAmount = cashReceived - billAmount;
   manageDisplay(returnableAmount);
-
 }
-
-btnCalculate.addEventListener('click',calculateHandler)
-inputCashReceived.addEventListener('change',calculateHandler)
+btnCalculate.addEventListener("click", calculateHandler);
+inputCashReceived.addEventListener("change", calculateHandler);
+inputBillAmount.addEventListener("change", (e) => {
+  console.log(e.target.value);
+  if (e.target.value <= 0) {
+    cashInputContainer.style.display = "none";
+  } else {
+    cashInputContainer.style.display = "block";
+  }
+});

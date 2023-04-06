@@ -31,7 +31,7 @@ button {
   border-radius: 0.4rem;
 }
 .input-form{
-    max-width: fit-content;
+    min-width:280px;
     margin: 1rem auto;
     border-radius: 0.4rem;
 }
@@ -43,6 +43,10 @@ button {
   background-color: plum;
   font-weight: bold;
   display: block;
+}
+
+.cash-input-container{
+  display: none;
 }
 
 .para-error-msg{
