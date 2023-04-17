@@ -6,30 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://jitendra1mp4.github.io/fun-css/utility.css">
     <title>Currency Break | Calculate change Amount</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        
+        table{
+        margin-left: auto;
+        margin-right: auto;
+        }
+        </style>
 </head>
 
-<body>
-    <main>
+<body class="container-fluid">
+    <main class="container-center" style="text-align: center;">
         <h1>Currency Break 💵</h1>
         <p> I can calculate amount change for the customer with a minimum number of notes.</p>
         <section>
             <div class="input-form">
                 <label for="bill-amount">
-                    Bill Amount :
+                    Bill Amount 
                 </label>
-                <input type="number" name="cash-received" id="bill-amount">
+                <input class="p-hf m-hf round-hf border-thin" type="number" name="cash-received" id="bill-amount">
 
                 <div class="cash-input-container">
                     <label for="cash-received">
-                        Cash Received :
+                        Cash Received 
                     </label>
-                    <input type="number" name="cash-received" id="cash-received">
-                    <button id="btn-calculate">Calculate</button>
+                    <input class="p-hf m-hf round-hf border-thin" type="number" name="cash-received" id="cash-received">
+                    <button class="btn-primary d-block container-center py-hf my-2"
+                        id="btn-calculate">Calculate</button>
                 </div>
 
                 <p class="para-error-msg"></p>
-                <table class="output-table" style="width:5rem">
+                <table class="output-table container-center my-2">
                     <caption>Required number of notes</caption>
                     <thead>
                         <tr>
