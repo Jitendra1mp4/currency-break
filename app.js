@@ -5,7 +5,7 @@ const inputCashReceived = document.getElementById("cash-received");
 const btnCalculate = document.getElementById("btn-calculate");
 const table = document.querySelector(".output-table");
 const cashInputContainer = document.querySelector(".cash-input-container");
-const paraErrorMsg = document.querySelector(".para-error-msg");
+const paraMsg = document.querySelector(".para-msg");
 
 function calcRequiredNotes(amount) {
   const requiredNotes = {
@@ -66,17 +66,17 @@ function manageDisplay(returnableAmount) {
     const reqNots = calcRequiredNotes(returnableAmount);
     addToDocument(reqNots);
     table.style.display = "block";
-    paraErrorMsg.style.display = "block";
-    paraErrorMsg.style.color = "green";
-    paraErrorMsg.style.backgroundColor = "#eeffee";
-    paraErrorMsg.innerText = "Returnable amount : " + returnableAmount;
+    paraMsg.style.display = "block";
+    paraMsg.style.color = "green";
+    paraMsg.style.backgroundColor = "#eeffee";
+    paraMsg.innerText = "Returnable amount : " + returnableAmount;
   } else {
     table.style.display = "none";
-    paraErrorMsg.style.backgroundColor = "rgba(255, 0, 0, 0.178)";
-    paraErrorMsg.style.color = "red";
-    paraErrorMsg.innerText =
+    paraMsg.style.backgroundColor = "rgba(255, 0, 0, 0.178)";
+    paraMsg.style.color = "red";
+    paraMsg.innerText =
       "Received cash should be greater then Bill amount.";
-    paraErrorMsg.style.display = "block";
+    paraMsg.style.display = "block";
   }
 }
 
