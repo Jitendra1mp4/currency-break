@@ -18,7 +18,9 @@ section label {
 }
 
 .para-msg{
-  padding: 0.5rem;
+  max-width: fit-content;
+  margin: auto;
+  padding: 0.5rem 1.5rem;
   border-radius: 0.4rem;
   display: none;
 }
